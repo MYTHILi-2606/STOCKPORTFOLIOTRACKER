@@ -1,0 +1,16 @@
+stock_prices = {"AAPL": 180, "TSLA": 250, "GOOGL": 150, "MSFT": 200, "AMZN": 300}
+total_value = 0
+
+print("Available stocks:", ", ".join(stock_prices.keys()))
+
+while True:
+    stock = input("Enter stock symbol (or type 'done' to finish): ").upper()
+    if stock == "DONE":
+        break
+    if stock in stock_prices:
+        quantity = int(input(f"Enter quantity for {stock}: "))
+        total_value += stock_prices[stock] * quantity
+    else:
+        print("Stock not found.")
+
+print("Total Investment Value: $", total_value)
